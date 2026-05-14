@@ -1,0 +1,22 @@
+{
+  "name": "Mickael Mattos — Desenvolvedor Web para Cartórios",
+  "short_name": "Mickael Mattos",
+  "description": "Criação de sites para cartórios e escritórios extrajudiciais em Maricá, RJ.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0d0d",
+  "theme_color": "#00a19c",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "/img/logo_mm_mickael_mattos_v3.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/logo_mm_mickael_mattos_v3.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

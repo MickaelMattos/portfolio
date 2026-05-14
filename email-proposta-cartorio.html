@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proposta Comercial — Site para Cartório | Mickael Mattos</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f4f4;
+      color: #222;
+    }
+    .wrapper {
+      max-width: 680px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    }
+
+    /* HEADER */
+    .header {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 60%, #00A19C 100%);
+      padding: 40px 40px 32px;
+      text-align: center;
+    }
+    .header .logo-text {
+      font-size: 38px;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 2px;
+    }
+    .header .logo-text span { color: #00A19C; }
+    .header .tagline {
+      font-size: 13px;
+      color: #aaa;
+      margin-top: 6px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* HERO STRIP */
+    .hero-strip {
+      background: #00A19C;
+      padding: 18px 40px;
+      text-align: center;
+    }
+    .hero-strip p {
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* BODY */
+    .body { padding: 40px; }
+
+    .greeting {
+      font-size: 17px;
+      color: #333;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    /* CASE SECTION */
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: #00A19C;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      margin-top: 36px;
+    }
+    .case-box {
+      background: #f8f9fa;
+      border-left: 4px solid #00A19C;
+      border-radius: 4px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+    .case-box h3 {
+      font-size: 15px;
+      color: #0a0a0a;
+      margin-bottom: 6px;
+    }
+    .case-box p {
+      font-size: 13.5px;
+      color: #555;
+      line-height: 1.6;
+    }
+    .case-box .visit-link {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 13px;
+      color: #00A19C;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .case-box .visit-link:hover { text-decoration: underline; }
+
+    /* BADGE PRODUÇÃO */
+    .badge {
+      display: inline-block;
+      background: #00A19C;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+      letter-spacing: 0.8px;
+    }
+
+    /* SERVIÇOS */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 4px;
+    }
+    .service-item {
+      background: #f8f9fa;
+      border-radius: 6px;
+      padding: 16px;
+      border-top: 3px solid #00A19C;
+    }
+    .service-item .icon { font-size: 22px; margin-bottom: 8px; }
+    .service-item h4 { font-size: 14px; color: #0a0a0a; margin-bottom: 4px; }
+    .service-item p { font-size: 12.5px; color: #666; line-height: 1.5; }
+
+    /* DESTAQUE PORTAL */
+    .highlight-box {
+      background: linear-gradient(135deg, #1a1a2e, #0d2137);
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin-top: 8px;
+    }
+    .highlight-box h3 {
+      color: #00A19C;
+      font-size: 15px;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+    .highlight-box ul {
+      list-style: none;
+      padding: 0;
+    }
+    .highlight-box ul li {
+      color: #ccc;
+      font-size: 13.5px;
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .highlight-box ul li:last-child { border-bottom: none; }
+    .highlight-box ul li::before {
+      content: "✓ ";
+      color: #00A19C;
+      font-weight: 700;
+    }
+
+    /* PRICING */
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+    .pricing-table th {
+      background: #0a0a0a;
+      color: #fff;
+      padding: 12px 16px;
+      font-size: 13px;
+      text-align: left;
+    }
+    .pricing-table td {
+      padding: 12px 16px;
+      font-size: 13.5px;
+      border-bottom: 1px solid #eee;
+    }
+    .pricing-table tr:nth-child(even) td { background: #f8f9fa; }
+    .pricing-table .price {
+      font-weight: 700;
+      color: #00A19C;
+    }
+    .pricing-table .total-row td {
+      background: #00A19C !important;
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    /* PRAZO */
+    .timeline {
+      display: flex;
+      gap: 0;
+      margin-top: 8px;
+    }
+    .timeline-item {
+      flex: 1;
+      text-align: center;
+      padding: 16px 8px;
+      background: #f8f9fa;
+      border-right: 2px solid #fff;
+      position: relative;
+    }
+    .timeline-item:last-child { border-right: none; }
+    .timeline-item .month {
+      font-size: 11px;
+      font-weight: 700;
+      color: #00A19C;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .timeline-item p {
+      font-size: 12px;
+      color: #666;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* LINKS UTEIS */
+    .links-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .link-chip {
+      display: inline-block;
+      background: #f0f9f8;
+      border: 1px solid #00A19C;
+      color: #00A19C;
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: 20px;
+      text-decoration: none;
+    }
+    .link-chip:hover { background: #00A19C; color: #fff; }
+
+    /* CTA BUTTONS */
+    .cta-section {
+      text-align: center;
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 2px solid #f0f0f0;
+    }
+    .cta-section p {
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: #25D366;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 6px;
+      text-decoration: none;
+      margin: 6px;
+    }
+    .btn-secondary {
+      display: inline-block;
+      background: #0a0a0a;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 13px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      margin: 6px;
+    }
+
+    /* FORMULÁRIO INLINE */
+    .form-section {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 28px;
+      margin-top: 32px;
+    }
+    .form-section h3 {
+      font-size: 16px;
+      color: #0a0a0a;
+      margin-bottom: 6px;
+    }
+    .form-section p {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    .form-row { margin-bottom: 14px; }
+    .form-row label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .form-row input,
+    .form-row select,
+    .form-row textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1.5px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+      font-family: inherit;
+      background: #fff;
+      transition: border-color 0.2s;
+    }
+    .form-row input:focus,
+    .form-row select:focus,
+    .form-row textarea:focus {
+      outline: none;
+      border-color: #00A19C;
+    }
+    .form-row textarea { height: 90px; resize: vertical; }
+    .btn-form {
+      width: 100%;
+      background: #00A19C;
+      color: #fff;
+      border: none;
+      padding: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 6px;
+      letter-spacing: 0.5px;
+    }
+    .btn-form:hover { background: #008a87; }
+
+    /* FOOTER */
+    .footer {
+      background: #0a0a0a;
+      padding: 28px 40px;
+      text-align: center;
+    }
+    .footer p {
+      color: #777;
+      font-size: 12.5px;
+      line-height: 1.7;
+    }
+    .footer a { color: #00A19C; text-decoration: none; }
+    .footer .social-links { margin: 14px 0; }
+    .footer .social-links a {
+      display: inline-block;
+      color: #aaa;
+      font-size: 12px;
+      margin: 0 8px;
+      text-decoration: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 580px) {
+      .body { padding: 24px 20px; }
+      .header { padding: 28px 20px 22px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .timeline { flex-direction: column; }
+      .timeline-item { border-right: none; border-bottom: 2px solid #fff; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="logo-text">MM<span>.</span></div>
+    <div class="tagline">Desenvolvimento Web para Cartórios · Maricá, RJ</div>
+  </div>
+
+  <!-- HERO STRIP -->
+  <div class="hero-strip">
+    <p>🏛️ Projeto em Produção · 3º Distrito de Maricá → Expandindo para o 2º Distrito</p>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <p class="greeting">
+      Prezada equipe do Cartório [Nome do Cartório],<br><br>
+      Meu nome é <strong>Mickael Mattos</strong>, desenvolvedor web especializado em sites para cartórios e escritórios extrajudiciais em Maricá/RJ. Tenho o prazer de apresentar esta proposta para a criação do site institucional do cartório, com base na minha experiência já consolidada na região.
+    </p>
+
+    <!-- CASO DE SUCESSO -->
+    <div class="section-title">// Projeto em Produção</div>
+
+    <div class="case-box">
+      <span class="badge">✅ EM PRODUÇÃO</span>
+      <h3>Cartório 3º Distrito de Maricá</h3>
+      <p>
+        Site institucional moderno, com Portal de Transparência conforme CGJ-RJ e CNJ Provimentos, SEO otimizado para Google, páginas explicativas de serviços, área de agendamento e análises de desempenho. O site já está ativo e sendo usado pela comunidade de Maricá.
+      </p>
+      <a href="https://cartorio3marica.vercel.app/" class="visit-link" target="_blank">↗ Visitar site em produção</a>
+    </div>
+
+    <div class="case-box">
+      <span class="badge" style="background:#1a1a2e;">🔧 DISPONÍVEL</span>
+      <h3>Cartório 2º Distrito de Maricá</h3>
+      <p>
+        Projeto desenvolvido e disponível para visualização. Demonstra o padrão de qualidade e as funcionalidades que serão entregues ao seu cartório.
+      </p>
+      <a href="https://cartorio-2-distrito.vercel.app/" class="visit-link" target="_blank">↗ Ver demonstração</a>
+    </div>
+
+    <!-- PORTFÓLIO -->
+    <p style="font-size:13px; color:#777; text-align:center; margin-top:8px;">
+      📂 Portfólio completo: <a href="https://mickael-mattos.vercel.app/" style="color:#00A19C; font-weight:600;">mickael-mattos.vercel.app</a>
+    </p>
+
+    <!-- SERVIÇOS -->
+    <div class="section-title">// O Que Está Incluído</div>
+    <div class="services-grid">
+      <div class="service-item">
+        <div class="icon">🔍</div>
+        <h4>SEO Avançado</h4>
+        <p>Otimização completa para Google — seu cartório aparece nas buscas dos moradores de Maricá.</p>
+      </div>
+      <div class="service-item">
+        <div class="icon">📊</div>
+        <h4>Análises e Relatórios</h4>
+        <p>Google Analytics integrado + relatório mensal de acessos, origens e comportamento dos visitantes.</p>
+      </div>
+      <div class="service-item">
+        <div class="icon">📄</div>
+        <h4>Páginas de Serviços</h4>
+        <p>Páginas detalhadas para cada serviço: Reconhecimento de Firma, Apostila, Escritura, Ata Notarial, etc.</p>
+      </div>
+      <div class="service-item">
+        <div class="icon">💬</div>
+        <h4>WhatsApp Integrado</h4>
+        <p>Botão de contato direto via WhatsApp em todas as páginas para facilitar o atendimento ao cidadão.</p>
+      </div>
+      <div class="service-item">
+        <div class="icon">📱</div>
+        <h4>Design Responsivo</h4>
+        <p>Compatível com celular, tablet e computador — experiência perfeita em qualquer dispositivo.</p>
+      </div>
+      <div class="service-item">
+        <div class="icon">🔒</div>
+        <h4>Segurança & LGPD</h4>
+        <p>Certificado SSL, headers de segurança, Política de Privacidade e conformidade com a LGPD.</p>
+      </div>
+    </div>
+
+    <!-- PORTAL DE TRANSPARÊNCIA -->
+    <div class="section-title">// Portal de Transparência (Exigência CGJ-RJ)</div>
+    <div class="highlight-box">
+      <h3>⚖️ Portal de Transparência — Obrigatório pelo CNJ/CGJ-RJ</h3>
+      <ul>
+        <li>Tabela de emolumentos atualizada conforme legislação estadual</li>
+        <li>Relação dos serviços extrajudiciais prestados</li>
+        <li>Horário de funcionamento e informações de contato</li>
+        <li>Declaração de acessibilidade</li>
+        <li>Link para o portal da CGJ-RJ e CNJ</li>
+        <li>Informações sobre o responsável titular e substituto</li>
+        <li>Relatórios e dados estatísticos (quando exigidos)</li>
+      </ul>
+    </div>
+
+    <!-- LINKS ÚTEIS -->
+    <div class="section-title">// Links Úteis Integrados ao Site</div>
+    <div class="links-row">
+      <a href="#" class="link-chip">🏛️ CGJ-RJ</a>
+      <a href="#" class="link-chip">⚖️ CNJ</a>
+      <a href="#" class="link-chip">📋 e-Notariado</a>
+      <a href="#" class="link-chip">🔑 Apostila Digital</a>
+      <a href="#" class="link-chip">📞 0800 Reclame</a>
+      <a href="#" class="link-chip">💬 WhatsApp Direto</a>
+      <a href="#" class="link-chip">📍 Google Maps</a>
+    </div>
+
+    <!-- PRAZO -->
+    <div class="section-title">// Prazo de Entrega — 3 Meses</div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="month">Mês 1</div>
+        <p>Levantamento, design, identidade visual e aprovação do layout</p>
+      </div>
+      <div class="timeline-item">
+        <div class="month">Mês 2</div>
+        <p>Desenvolvimento, Portal de Transparência, páginas de serviços e integração WhatsApp</p>
+      </div>
+      <div class="timeline-item">
+        <div class="month">Mês 3</div>
+        <p>SEO, testes, revisões, publicação e treinamento da equipe</p>
+      </div>
+    </div>
+
+    <!-- TABELA DE PREÇOS -->
+    <div class="section-title">// Investimento</div>
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>Serviço</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Desenvolvimento do site institucional completo</td>
+          <td class="price">R$ 2.500</td>
+        </tr>
+        <tr>
+          <td>Portal de Transparência (CGJ/CNJ)</td>
+          <td class="price">Incluído</td>
+        </tr>
+        <tr>
+          <td>SEO inicial + configuração Google Analytics</td>
+          <td class="price">Incluído</td>
+        </tr>
+        <tr>
+          <td>Hospedagem profissional (1º ano)</td>
+          <td class="price">Incluído</td>
+        </tr>
+        <tr>
+          <td>Suporte e ajustes — 3 meses pós-entrega</td>
+          <td class="price">Incluído</td>
+        </tr>
+        <tr>
+          <td>Manutenção mensal (após 1º ano) — opcional</td>
+          <td class="price">R$ 250/mês</td>
+        </tr>
+        <tr class="total-row">
+          <td>INVESTIMENTO TOTAL</td>
+          <td>R$ 2.500 (à vista) ou 3× R$ 900</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:12px; color:#888; margin-top:8px; text-align:center;">
+      * Valores negociáveis conforme escopo. Emitimos recibo/NF.
+    </p>
+
+    <!-- CTA WHATSAPP / PORTFÓLIO -->
+    <div class="cta-section">
+      <p>
+        Estou à disposição para uma conversa rápida e apresentar o projeto em produção do <strong>3º Distrito</strong> pessoalmente ou por videochamada. Será um prazer atender o <strong>2º Distrito de Maricá</strong>!
+      </p>
+      <a class="btn-primary"
+         href="https://wa.me/5521975250006?text=Ol%C3%A1%20Mickael%2C%20vi%20sua%20proposta%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20site%20para%20o%20cart%C3%B3rio."
+         target="_blank">
+        💬 Falar pelo WhatsApp
+      </a>
+      <a class="btn-secondary"
+         href="https://mickael-mattos.vercel.app/"
+         target="_blank">
+        🌐 Ver Portfólio Completo
+      </a>
+    </div>
+
+    <!-- FORMULÁRIO DE INTERESSE -->
+    <div class="form-section">
+      <h3>📋 Formulário de Interesse</h3>
+      <p>Preencha abaixo e entro em contato em até 24 horas com uma proposta personalizada.</p>
+
+      <form action="https://formspree.io/f/mickael.escrevente@gmail.com" method="POST">
+        <div class="form-row">
+          <label>Nome do Cartório *</label>
+          <input type="text" name="cartorio" placeholder="Ex: Cartório 1º Ofício de Maricá" required />
+        </div>
+        <div class="form-row">
+          <label>Nome do Responsável *</label>
+          <input type="text" name="nome" placeholder="Nome do titular ou escrevente" required />
+        </div>
+        <div class="form-row">
+          <label>E-mail para retorno *</label>
+          <input type="email" name="email" placeholder="email@cartorio.com.br" required />
+        </div>
+        <div class="form-row">
+          <label>WhatsApp</label>
+          <input type="tel" name="whatsapp" placeholder="(21) 9 9999-9999" />
+        </div>
+        <div class="form-row">
+          <label>Serviço de interesse</label>
+          <select name="servico">
+            <option value="">Selecione...</option>
+            <option value="site-completo">Site institucional completo</option>
+            <option value="portal-transparencia">Apenas Portal de Transparência</option>
+            <option value="seo">Melhoria de SEO em site existente</option>
+            <option value="manutencao">Manutenção de site existente</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Mensagem ou dúvidas</label>
+          <textarea name="mensagem" placeholder="Fique à vontade para escrever..."></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="Nova proposta — Site para Cartório" />
+        <input type="hidden" name="_replyto" value="" />
+        <button type="submit" class="btn-form">📨 Enviar Solicitação</button>
+      </form>
+    </div>
+
+  </div><!-- /body -->
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>
+      <strong style="color:#fff;">Mickael Mattos</strong> — Desenvolvedor Web para Cartórios<br>
+      📍 Maricá, RJ &nbsp;|&nbsp;
+      📧 <a href="mailto:mickael.escrevente@gmail.com">mickael.escrevente@gmail.com</a> &nbsp;|&nbsp;
+      📱 <a href="https://wa.me/5521975250006">(21) 97525-0006</a>
+    </p>
+    <div class="social-links">
+      <a href="https://mickael-mattos.vercel.app/" target="_blank">🌐 Portfólio</a>
+      <a href="https://wa.me/5521975250006" target="_blank">💬 WhatsApp</a>
+      <a href="mailto:mickael.escrevente@gmail.com">📧 E-mail</a>
+    </div>
+    <p style="margin-top:12px; font-size:11px; color:#555;">
+      Esta proposta é sigilosa e destinada exclusivamente ao destinatário. Caso tenha recebido por engano, por favor desconsidere.
+    </p>
+  </div>
+
+</div><!-- /wrapper -->
+
+</body>
+</html>

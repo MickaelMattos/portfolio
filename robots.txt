@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mickael-mattos.vercel.app/sitemap.xml

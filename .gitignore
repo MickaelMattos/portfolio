@@ -1,0 +1,13 @@
+# Pastas do sistema
+.claude/
+.gemini/
+
+# Sistema operacional
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# Editores
+.vscode/
+*.swp
+*.swo
